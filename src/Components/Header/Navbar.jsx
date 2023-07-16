@@ -14,12 +14,21 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import styled from "@emotion/styled";
 import useAuth from "../../Hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const StyledBox = styled(Box)({
   display: "flex",
   // justifyContent: "space-between",
   alignItems: "center",
   gap: "30px",
+});
+const StyledLogoutButton = styled(Button)({
+  backgroundColor: "red",
+  color: "#ffffff",
+  borderRadius: "10px",
+  ":hover": {
+    backgroundColor: "#008FFF",
+  },
 });
 
 const pages = ["Products", "Pricing", "Blog"];
@@ -47,8 +56,8 @@ const Navbar = () => {
   };
 
   const signOut = () => {
-    userSignOut()
-  }
+    userSignOut();
+  };
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -142,23 +151,27 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0 }}>
             {!authUser ? (
               <StyledBox>
-                <Button
-                  variant="contained"
-                  color="success"
-                  sx={{ display: { xs: "none", md: "block" } }}
-                >
-                  Login
-                </Button>
-                <Button
-                  variant="contained"
-                  color="success"
-                  sx={{ display: { xs: "none", md: "block" } }}
-                >
-                  SignUp
-                </Button>
+                <Link to="/login">
+                  <Button
+                    variant="contained"
+                    color="success"
+                    sx={{ display: { xs: "none", md: "block" } }}
+                  >
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button
+                    variant="contained"
+                    color="success"
+                    sx={{ display: { xs: "none", md: "block" } }}
+                  >
+                    SignUp
+                  </Button>
+                </Link>
               </StyledBox>
             ) : (
-              <>
+              <Box sx={{ display: "flex" }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar
@@ -167,31 +180,15 @@ const Navbar = () => {
                     />
                   </IconButton>
                 </Tooltip>
-                {/* <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu> */}
-                <Typography variant="h6" gutterBottom>Welcome {authUser.email}</Typography>
-                <Button color="success" onClick={signOut}>Sign Out</Button>
-              </>
+                <Box sx={{ display: "flex" }}>
+                  <Typography variant="h6" gutterBottom>
+                    Welcome {authUser.email}
+                  </Typography>
+                  <StyledLogoutButton onClick={signOut}>
+                    Sign Out
+                  </StyledLogoutButton>
+                </Box>
+              </Box>
             )}
           </Box>
         </Toolbar>
