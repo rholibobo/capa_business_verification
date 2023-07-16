@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -46,6 +48,17 @@ const Login = () => {
         setShowPassword((prev) => !prev)
     }
 
+    const handleSubmit = (values)=> {
+      const {email, password} = values;
+
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        console.log(userCredential)
+      }).catch((error) => {
+        console.error(error)
+      })
+    }
+
   return (
     <Box sx={{ width: "40%", margin: "2rem auto 0 auto" }}>
       <Box sx={{ marginBottom: "1rem" }}>
@@ -64,6 +77,7 @@ const Login = () => {
         validationSchema={loginSchema}
         onSubmit={async (values, { setSubmitting }) => {
           setSubmitting(false);
+          handleSubmit(values)
         }}
       >
         {({
@@ -74,7 +88,7 @@ const Login = () => {
           touched,
           values,
         }) => (
-          <form noValidate>
+          <form noValidate onSubmit={handleSubmit}>
             
             <InputFieldBox>
               <TextField

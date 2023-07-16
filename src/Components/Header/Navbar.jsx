@@ -13,13 +13,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import styled from "@emotion/styled";
+import useAuth from "../../Hooks/useAuth";
 
 const StyledBox = styled(Box)({
-    display: "flex",
-    // justifyContent: "space-between",
-    alignItems: "center",
-    gap: "30px",
-  });
+  display: "flex",
+  // justifyContent: "space-between",
+  alignItems: "center",
+  gap: "30px",
+});
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -28,7 +29,7 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const auth = false;
+  const { authUser, userSignOut } = useAuth();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,6 +45,10 @@ const Navbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const signOut = () => {
+    userSignOut()
+  }
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -135,15 +140,24 @@ const Navbar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <StyledBox>
-            <Button variant="contained" color="success" sx={{display: {xs: "none", md:"block"}}}>Login</Button>
-            <Button variant="contained" color="success" sx={{display: {xs: "none", md:"block"}}}>SignUp</Button>
-            </StyledBox>
-            
-            
-            
-
-            {auth == true && (
+            {!authUser ? (
+              <StyledBox>
+                <Button
+                  variant="contained"
+                  color="success"
+                  sx={{ display: { xs: "none", md: "block" } }}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  sx={{ display: { xs: "none", md: "block" } }}
+                >
+                  SignUp
+                </Button>
+              </StyledBox>
+            ) : (
               <>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -153,7 +167,7 @@ const Navbar = () => {
                     />
                   </IconButton>
                 </Tooltip>
-                <Menu
+                {/* <Menu
                   sx={{ mt: "45px" }}
                   id="menu-appbar"
                   anchorEl={anchorElUser}
@@ -174,7 +188,9 @@ const Navbar = () => {
                       <Typography textAlign="center">{setting}</Typography>
                     </MenuItem>
                   ))}
-                </Menu>
+                </Menu> */}
+                <Typography variant="h6" gutterBottom>Welcome {authUser.email}</Typography>
+                <Button color="success" onClick={signOut}>Sign Out</Button>
               </>
             )}
           </Box>
