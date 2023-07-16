@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Button, FormHelperText, IconButton, InputAdornment, TextField, Typography } from "@mui/material";
 import { Email, Lock, Visibility, VisibilityOff } from "@mui/icons-material";
 import * as Yup from "yup";
@@ -48,12 +49,17 @@ const Login = () => {
         setShowPassword((prev) => !prev)
     }
 
+    const navigate = useNavigate()
+
     const handleSubmit = (values)=> {
       const {email, password} = values;
 
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        console.log(userCredential)
+        if(userCredential.user) {
+          navigate("/")
+          console.log(userCredential.user)
+        }
       }).catch((error) => {
         console.error(error)
       })
@@ -77,7 +83,7 @@ const Login = () => {
         validationSchema={loginSchema}
         onSubmit={async (values, { setSubmitting }) => {
           setSubmitting(false);
-          handleSubmit(values)
+          handleSubmit(values);
         }}
       >
         {({
@@ -148,7 +154,7 @@ const Login = () => {
                 </FormHelperText>
               )}
             </InputFieldBox>
-            <StyledSubmitButton >Login</StyledSubmitButton>
+            <StyledSubmitButton type="submit" >Login</StyledSubmitButton>
 
             <Box sx={{marginTop: "10px"}}>
             <Typography>Don't have an account? <Link to="/register">Signup</Link></Typography>
