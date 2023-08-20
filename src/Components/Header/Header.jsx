@@ -7,8 +7,9 @@ const Header = () => {
     const location = useLocation();
     const isLoginRoute = location.pathname === "/login";
     const isRegisterRoute = location.pathname === "/register";
+    const isResetPasswordRoute = location.pathname === "/reset-password";
 
-    if(isLoginRoute || isRegisterRoute) {
+    if(isLoginRoute || isRegisterRoute || isResetPasswordRoute) {
         return null;
     }
   return (

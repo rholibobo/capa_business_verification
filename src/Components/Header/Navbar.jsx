@@ -27,7 +27,7 @@ const StyledLogoutButton = styled(Button)({
   color: "#ffffff",
   borderRadius: "10px",
   ":hover": {
-    backgroundColor: "#008FFF",
+    backgroundColor: "#960018",
   },
 });
 
@@ -171,16 +171,9 @@ const Navbar = () => {
                 </Link>
               </StyledBox>
             ) : (
-              <Box sx={{ display: "flex" }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt="Remy Sharp"
-                      src="/static/images/avatar/2.jpg"
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                
+                <Box sx={{ display: "flex", gap: "2rem" }}>
                   <Typography variant="h6" gutterBottom>
                     Welcome {authUser.email}
                   </Typography>

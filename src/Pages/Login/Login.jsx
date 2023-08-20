@@ -56,9 +56,14 @@ const Login = () => {
 
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        if(userCredential.user) {
+        
+        if(userCredential.user.emailVerified) {
+          console.log(userCredential.user.emailVerified)
           navigate("/")
-          console.log(userCredential.user)
+        } 
+        else {
+          console.log(userCredential.user.emailVerified)
+          alert("Verify email before login")
         }
       }).catch((error) => {
         console.error(error)
@@ -158,6 +163,7 @@ const Login = () => {
 
             <Box sx={{marginTop: "10px"}}>
             <Typography>Don't have an account? <Link to="/register">Signup</Link></Typography>
+            <Typography>Forgot Password? <Link to="/reset-password">Reset Password</Link></Typography>
             </Box>
             
           </form>

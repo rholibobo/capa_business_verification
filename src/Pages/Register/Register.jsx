@@ -18,9 +18,9 @@ import {
 import * as Yup from "yup";
 import { Formik } from "formik";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
 
 const registerSchema = Yup.object().shape({
   name: Yup.string().min(2).max(200).required("First Name is required!"),
@@ -58,6 +58,7 @@ const StyledSubmitButton = styled(Button)({
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const passwordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -67,10 +68,14 @@ const Register = () => {
     const { email, password, name } = values;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        sendEmailVerification(auth.currentUser)
+          .then(()=> {
+            alert("Email Verification Link Sent")
+          })
         updateProfile(userCredential.user, {
             displayName: name,
           })
-        console.log(userCredential);
+        navigate("/login")
       })
       .catch((error) => {
         console.error(error);
