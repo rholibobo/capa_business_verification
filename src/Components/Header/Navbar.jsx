@@ -21,30 +21,18 @@ const StyledBox = styled(Box)({
   alignItems: "center",
   gap: "30px",
 });
+
 const StyledLogoutButton = styled(Button)({
   backgroundColor: "red",
   color: "#ffffff",
   borderRadius: "10px",
+  padding: "0.5rem 1rem",
+  textTransform: "capitalize",
   ":hover": {
     backgroundColor: "#960018",
   },
 });
-const LoginButton = styled(Button)({
-  backgroundColor: "red",
-  color: "#ffffff",
-  borderRadius: "10px",
-  ":hover": {
-    backgroundColor: "#960018",
-  },
-});
-const SignupButton = styled(Button)({
-  backgroundColor: "red",
-  color: "#ffffff",
-  borderRadius: "10px",
-  ":hover": {
-    backgroundColor: "#960018",
-  },
-});
+
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -54,22 +42,20 @@ const Navbar = () => {
   const location = useLocation();
   const isMobileView = useMediaQuery("(max-width:1000px)");
 
-  
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+  // };
 
   const signOut = () => {
     userSignOut();
@@ -92,7 +78,7 @@ const Navbar = () => {
         }}
       >
         <Box>
-        {!isMobileView ? null : <HamburgerMenu />}
+          {!isMobileView ? null : <HamburgerMenu />}
           <Typography
             variant="h6"
             noWrap
@@ -112,11 +98,21 @@ const Navbar = () => {
           </Typography>
         </Box>
 
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          <Box sx={{ padding: "1rem 0" }}>
+        <Box sx={{ width: "30%" }}>
+          <Box
+            sx={{
+              padding: "1rem 0",
+              display: { xs: "none", md: "flex" },
+              justifyContent: "space-between",
+            }}
+          >
             <Link to="/">
               <Button
-                sx={{ textTransform: "capitalize", color: "black" }}
+                sx={{
+                  textTransform: "capitalize",
+                  color: "black",
+                  fontWeight: "bold",
+                }}
                 className={location.pathname === "/" ? Styles.active : ""}
                 onClick={handleCloseNavMenu}
               >
@@ -126,8 +122,14 @@ const Navbar = () => {
 
             <Link to="/about-us">
               <Button
-                sx={{ textTransform: "capitalize", color: "black" }}
-                className={location.pathname === "/about-us" ? Styles.active : ""}
+                sx={{
+                  textTransform: "capitalize",
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+                className={
+                  location.pathname === "/about-us" ? Styles.active : ""
+                }
                 onClick={handleCloseNavMenu}
               >
                 About Us
@@ -135,8 +137,14 @@ const Navbar = () => {
             </Link>
             <Link to="/verification">
               <Button
-                sx={{ textTransform: "capitalize", color: "black" }}
-                className={location.pathname === "/verification" ? Styles.active : ""}
+                sx={{
+                  textTransform: "capitalize",
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+                className={
+                  location.pathname === "/verification" ? Styles.active : ""
+                }
                 onClick={handleCloseNavMenu}
               >
                 Business Verification
@@ -148,37 +156,51 @@ const Navbar = () => {
         <Box sx={{}}>
           {!authUser ? (
             <StyledBox>
-              <Link to="/login">
+              <Link to="/login" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
-                  // color="success"
+                  className={Styles.btn}
                   sx={{
                     display: { xs: "none", md: "block" },
-                    backgroundColor: "#051e34",
+                    textTransform: "capitalize",
+                    backgroundColor: "#F3F3F2",
+                    color: "#000",
+                    border: "1px solid grey",
+                    "&:hover": {
+                      backgroundColor: "#E7E7EB"
+                    }
                   }}
+                  
+                  
                 >
                   Login
                 </Button>
               </Link>
-              <Link to="/register">
+              <Link to="/register" style={{ textDecoration: "none" }}>
                 <Button
                   variant="contained"
-                  // color="success"
+                  // className={Styles.btn}
                   sx={{
                     display: { xs: "none", md: "block" },
-                    color: "#ffffff",
-                    border: "1px solid #051e34",
+                    textTransform: "capitalize",
+                    backgroundColor: "#F3F3F2",
+                    color: "#000",
+                    border: "1px solid grey",
+                    "&:hover": {
+                      backgroundColor: "#E7E7EB"
+                    }
                   }}
+                  
                 >
                   SignUp
                 </Button>
               </Link>
             </StyledBox>
           ) : (
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <Box sx={{ display: "flex", gap: "2rem" }}>
-                <Typography variant="h6" gutterBottom>
-                  Welcome {authUser.email}
+            <Box >
+              <Box sx={{ display: "flex",alignItems: "center", gap: "2rem" }}>
+                <Typography variant="body1" gutterBottom>
+                   {authUser.email}
                 </Typography>
                 <StyledLogoutButton onClick={signOut}>
                   Sign Out

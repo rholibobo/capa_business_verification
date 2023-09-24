@@ -1,3 +1,13 @@
 .active{
     color: rgb(0, 149, 255);
 }
+
+.btn{
+    background-color: #F3F3F2;
+    color: #000;
+    border: 1px solid grey;
+    text-transform: capitalize;
+}
+.btn:hover{
+    background-color: #E7E7EB;
+}
