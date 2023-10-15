@@ -1,12 +1,26 @@
-import React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Container,
+  Button,
+  useMediaQuery,
+  Menu,
+  MenuItem,
+  Popover,
+  Divider,
+} from "@mui/material";
+// import Box from "@mui/material/Box";
+// import Toolbar from "@mui/material/Toolbar";
+// import IconButton from "@mui/material/IconButton";
+// import Typography from "@mui/material/Typography";
+// import Container from "@mui/material/Container";
+// import Button from "@mui/material/Button";
+// import useMediaQuery from "@mui/material/useMediaQuery";
+
+import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 
 import styled from "@emotion/styled";
 import useAuth from "../../Hooks/useAuth";
@@ -33,29 +47,22 @@ const StyledLogoutButton = styled(Button)({
   },
 });
 
-
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const [arrow, setArrow] = useState(true);
 
   const { authUser, userSignOut } = useAuth();
   const location = useLocation();
   const isMobileView = useMediaQuery("(max-width:1000px)");
 
-  // const handleOpenNavMenu = (event) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
+  const arrowChange = () => {
+    setArrow(false);
+  };
 
   const signOut = () => {
     userSignOut();
@@ -103,22 +110,12 @@ const Navbar = () => {
             sx={{
               padding: "1rem 0",
               display: { xs: "none", md: "flex" },
-              justifyContent: "space-between",
+              justifyContent: "space-around",
+              // backgroundColor: "red",
+              position: "relative",
             }}
           >
-            <Link to="/">
-              <Button
-                sx={{
-                  textTransform: "capitalize",
-                  color: "black",
-                  fontWeight: "bold",
-                }}
-                className={location.pathname === "/" ? Styles.active : ""}
-                onClick={handleCloseNavMenu}
-              >
-                Home
-              </Button>
-            </Link>
+            
 
             <Link to="/about-us">
               <Button
@@ -126,30 +123,48 @@ const Navbar = () => {
                   textTransform: "capitalize",
                   color: "black",
                   fontWeight: "bold",
+                  
                 }}
-                className={
-                  location.pathname === "/about-us" ? Styles.active : ""
-                }
+                className={location.pathname === "/about-us" && Styles.active}
+                // className={}
+                
                 onClick={handleCloseNavMenu}
               >
                 About Us
               </Button>
             </Link>
-            <Link to="/verification">
+
+            {/* dropdwon */}
+            <Box className={Styles.verifyCont}>
+              
               <Button
                 sx={{
                   textTransform: "capitalize",
                   color: "black",
                   fontWeight: "bold",
                 }}
-                className={
-                  location.pathname === "/verification" ? Styles.active : ""
-                }
-                onClick={handleCloseNavMenu}
               >
-                Business Verification
+                Product &nbsp; <KeyboardArrowDown />
               </Button>
-            </Link>
+
+              <div className={Styles.linkBox}>
+                <Typography
+                  gutterBottom
+                  variant="body2"
+                  sx={{ margin: "10px", cursor: "pointer", }}
+                >
+                  Company Search
+                </Typography>
+                <Divider />
+                <Typography
+                  gutterBottom
+                  variant="body2"
+                  sx={{ margin: "10px", cursor: "pointer", }}
+                >
+                  Personnel Search
+                </Typography>
+              </div>
+            </Box>
           </Box>
         </Box>
 
@@ -167,11 +182,9 @@ const Navbar = () => {
                     color: "#000",
                     border: "1px solid grey",
                     "&:hover": {
-                      backgroundColor: "#E7E7EB"
-                    }
+                      backgroundColor: "#E7E7EB",
+                    },
                   }}
-                  
-                  
                 >
                   Login
                 </Button>
@@ -187,20 +200,19 @@ const Navbar = () => {
                     color: "#000",
                     border: "1px solid grey",
                     "&:hover": {
-                      backgroundColor: "#E7E7EB"
-                    }
+                      backgroundColor: "#E7E7EB",
+                    },
                   }}
-                  
                 >
                   SignUp
                 </Button>
               </Link>
             </StyledBox>
           ) : (
-            <Box >
-              <Box sx={{ display: "flex",alignItems: "center", gap: "2rem" }}>
+            <Box>
+              <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
                 <Typography variant="body1" gutterBottom>
-                   {authUser.email}
+                  {authUser.email}
                 </Typography>
                 <StyledLogoutButton onClick={signOut}>
                   Sign Out
