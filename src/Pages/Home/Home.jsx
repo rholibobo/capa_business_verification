@@ -10,8 +10,12 @@ const Home = () => {
       </div>
       <img src="" alt="" />
     </section>
-    <section className='w-11/12 mx-auto'>
-      <h1>Verify with Business name</h1>
+    <section className='w-11/12 mx-auto text-center p-2'>
+      <h1 className='text-2xl font-bold my-2'>Verify with Business name</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptatibus deleniti praesentium eaque iste obcaecati ullam placeat facilis voluptates expedita.</p>
+    </section>
+    <section className='w-11/12 mx-auto text-center p-2'>
+      <h1 className='text-2xl font-bold my-2'>Verify with Business Email</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptatibus deleniti praesentium eaque iste obcaecati ullam placeat facilis voluptates expedita.</p>
     </section>
     </div>
