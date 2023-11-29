@@ -1,4 +1,5 @@
 import React from 'react'
+import { Email } from '@mui/icons-material'
 
 const Home = () => {
   return (
@@ -14,9 +15,12 @@ const Home = () => {
       <h1 className='text-2xl font-bold my-2'>Verify with Business name</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptatibus deleniti praesentium eaque iste obcaecati ullam placeat facilis voluptates expedita.</p>
     </section>
-    <section className='w-11/12 mx-auto text-center p-2'>
-      <h1 className='text-2xl font-bold my-2'>Verify with Business Email</h1>
+    <section className='w-11/12 mx-auto p-2 flex justify-between items-center md:flex-row-reverse flex-col'>
+     <div className='w-3/5'>
+     <h1 className='text-2xl font-bold my-2'>Verify with Business Email</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptatibus deleniti praesentium eaque iste obcaecati ullam placeat facilis voluptates expedita.</p>
+     </div>
+      <Email className='' style={{fontSize: "20rem"}} />
     </section>
     </div>
   )
