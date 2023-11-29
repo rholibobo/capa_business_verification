@@ -13,7 +13,7 @@ const Home = () => {
     </section>
     <section className='w-11/12 mx-auto text-center p-2'>
       <h1 className='text-2xl font-bold my-2'>Verify with Business name</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptatibus deleniti praesentium eaque iste obcaecati ullam placeat facilis voluptates expedita.</p>
+      <p>Experience hassle-free verification by simply typing in the business name. Our 'Verify with Business Name' feature puts the power in your hands, allowing you to effortlessly authenticate businesses by entering their names. Swift, accurate, and user-friendly – confirming business details has never been this easy.</p>
     </section>
     <section className='w-11/12 mx-auto p-2 flex justify-between items-center md:flex-row-reverse flex-col'>
      <div className='w-3/5'>
