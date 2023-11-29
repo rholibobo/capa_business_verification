@@ -20,7 +20,9 @@ const Home = () => {
     <section className='w-11/12 mx-auto p-2 flex justify-between items-center md:flex-row-reverse flex-col-reverse'>
      <div className='md:w-3/5'>
      <h1 className='text-2xl font-bold my-2'>Verify with Business Email</h1>
-      <p>With just an email address, you can authenticate users and businesses, adding an extra layer of security to your interactions.</p>
+      <p>Seamlessly confirm identities and ensure trust by leveraging our "verify with email" feature - With just an email address, you can authenticate users and businesses, adding an extra layer of security to your interactions.</p>
+
+ 
      </div>
       <Email className='' style={{fontSize: "20rem"}} />
     </section>
