@@ -60,9 +60,7 @@ const Navbar = () => {
     setAnchorElNav(null);
   };
 
-  const arrowChange = () => {
-    setArrow(false);
-  };
+  
 
   const signOut = () => {
     userSignOut();
@@ -77,11 +75,12 @@ const Navbar = () => {
       }}
     >
       <Container
-        maxWidth="xl"
+        // maxWidth="xl"
         sx={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
+          height: "10vh",
         }}
       >
         <Box>
@@ -108,12 +107,13 @@ const Navbar = () => {
         <Box sx={{ width: "30%" }}>
           <Box
             sx={{
-              padding: "1rem 0",
+              padding: "0rem 0",
               display: { xs: "none", md: "flex" },
               justifyContent: "space-around",
               // backgroundColor: "red",
               position: "relative",
             }}
+            
           >
             
 

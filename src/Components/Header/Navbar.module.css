@@ -12,18 +12,13 @@
   background-color: #e7e7eb;
 }
 
-.about_btn{
-    text-transform: capitalize;
-    color: black;
-    font-weight: bold;
-    /* padding: 10px; */
-}
 
 .verifyCont {
     /* padding-bottom: 40px; */
   display: flex;
   justify-content: space-between;
-  background-color: red;
+  
+  /* background-color: red; */
   /* position: relative; */
   /* padding: 10px; */
 }
@@ -32,12 +27,12 @@
   display: none;
   width: 50%;
   position: absolute;
-  top: 60px;
+  top: 30px;
   background-color: #ffffff;
 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.verifyCont:hover .linkBox {
+.verifyCont:hover .linkBox  {
   display: block;
 }
