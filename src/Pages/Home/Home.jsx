@@ -1,15 +1,16 @@
 import React from 'react'
 import { Email } from '@mui/icons-material'
+import heroImage from "../../assets/hero.png"
 
 const Home = () => {
   return (
     <div className=''>
-    <section className='flex flex-col justify-between items-center bg-green-100 mb-10 text-center px-4 py-8 text-green-800'>
-      <div className=''>
-      <h1 className='text-4xl font-bold my-2'><span className='text-black'>Verify</span> any business </h1>
-      <p className='text-lg'><span className='text-orange-600 font-bold'>Capa Business Verification</span> serves as your comprehensive business verification platform, offering a streamlined experience for discovering and connecting with genuine businesses and their owners. Our platform is designed to provide you with all the tools you need for reliable and authentic business verification, ensuring a secure and trustworthy environment for your business interactions</p>
+    <section className='flex flex-col md:flex-row justify-between items-center bg-green-100 mb-10 text-center px-4 py-8 text-green-800'>
+      <div className='md:text-left md:w-1/2'>
+      <h1 className='text-4xl font-bold my-2'>Allow us handle your verification for you </h1>
+      <p className='text-'><span className='text-orange-600 font-bold'>Capa Business Verification</span> serves as your comprehensive business verification platform, offering a streamlined experience for discovering and connecting with genuine businesses and their owners. Our platform is designed to provide you with all the tools you need for reliable and authentic business verification, ensuring a secure and trustworthy environment for your business interactions</p>
       </div>
-      <img src="" alt="" />
+      <img src={heroImage} className='md:w-2/5' alt="Hero" />
     </section>
     <section className='w-11/12 mx-auto text-center p-2'>
       <h1 className='text-2xl font-bold my-2'>Verify with Business name</h1>
