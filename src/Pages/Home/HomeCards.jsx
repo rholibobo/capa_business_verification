@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../../Components/Button";
 
 export const HomeCards = ({ title, description, linkDestination, avatar }) => {
   return (
@@ -13,9 +14,9 @@ export const HomeCards = ({ title, description, linkDestination, avatar }) => {
       <p className="mb-10 text-lg text-opacity-60">{description}</p>
       <Link
         to={linkDestination}
-        className="mr-3.5 border-2 text-white hover:opacity-80 bg-green-600 border-white p-2 rounded-full font-medium grid place-items-center"
+       
       >
-        Learn more
+      <Button title="Learn More" variant="contained" />
       </Link>
     </div>
   );
