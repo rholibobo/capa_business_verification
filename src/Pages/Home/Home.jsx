@@ -20,7 +20,7 @@ const Home = () => {
   },
 ]
   return (
-    <div className=''>
+    <div className='mt-10'>
     <section className='flex flex-col md:flex-row justify-between items-center  text-center px-10 py-8 mx-auto text-green-900'>
       <div className='md:text-left md:w-1/2'>
       <h1 className='text-4xl font-bold my-6'>Allow us handle your verification for you </h1>
