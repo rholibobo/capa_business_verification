@@ -74,7 +74,7 @@ const Login = () => {
     <Box sx={{ width: "40%", margin: "2rem auto 0 auto" }}>
       <Box sx={{ marginBottom: "1rem" }}>
       <Typography variant="h5" sx={{fontWeight: "bold"}} color="#007FFF" gutterBottom>
-          Welcome to CapaBusiness Verififcation
+          Welcome to CapaBusiness Verification
         </Typography>
         <Typography variant="body2" sx={{fontWeight: "bold"}} gutterBottom>
           Log into your account
