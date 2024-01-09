@@ -6,7 +6,7 @@ import { HomeCards } from './HomeCards'
 const Home = () => {
   const cardDetails = [{
     title: "Verify with Business name",
-    description: "Experience hassle-free verification by simply typing in the business name. Our Verify with Business Namefeature puts the power in your hands, allowing you to effortlessly authenticate businesses by entering their names. Swift, accurate, and user-friendly – confirming business details has never been this easy",
+    description: "Experience hassle-free verification by simply typing in the business name. Our Verify with Business Namefeature puts the power in your hands, allowing you to effortlessly authenticate businesses by entering their names. Swift, accurate, and user-friendly",
     link: "/",
     avatar: "" ,
   },
@@ -26,7 +26,7 @@ const Home = () => {
       </div>
       <img src={heroImage} className='md:w-2/5' alt="Hero" />
     </section>
-    <section className='w-11/12 mx-auto text-center p-2'>
+    <section className='w-11/12 md:w-10/12 mx-auto p-2 flex flex-col md:flex-row gap-6 items-center justify-between'>
       {cardDetails.map((card, index)=>{
         return(
 
@@ -35,9 +35,7 @@ const Home = () => {
       })}
       
     </section>
-    
-      <Email className='' style={{fontSize: "20rem"}} />
- 
+  
     </div>
   )
 }
