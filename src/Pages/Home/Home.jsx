@@ -1,11 +1,11 @@
 import React from "react";
-import { Email } from "@mui/icons-material";
-import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/4565.jpg";
 import { HomeCards } from "./HomeCards";
 import businessAvatar from "../../assets/secureVerr.svg";
 import emailAvatar from "../../assets/emailVerr.svg";
 import { Stack } from "@mui/material";
 import Button from "../../Components/Button";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const cardDetails = [
@@ -70,6 +70,22 @@ const Home = () => {
               />
             );
           })}
+        </section>
+
+        <section className="text-center mx-auto p-4 bg-zinc-50 my-10">
+          <h2 className="text-2xl leading-[4] font-semibold text-green-900">
+            Take the next step
+          </h2>
+          <p className="mb-8 text-lg">
+            Click the link below to create an account and select any of our
+            services
+          </p>
+          <div className="md:w-1/6 mx-auto">
+
+          <Link to="/register" >
+            <Button variant="outlined" title="Get started" />
+          </Link>
+          </div>
         </section>
       </>
     </div>
