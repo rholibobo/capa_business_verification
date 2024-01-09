@@ -27,6 +27,7 @@ const Home = () => {
       <img src={heroImage} className='md:w-2/5' alt="Hero" />
     </section>
     <section className='w-11/12 md:w-10/12 mx-auto p-2 flex flex-col md:flex-row gap-6 items-center justify-between'>
+      <h2 className='text-center text-2xl'>Reliable end-to-end verification services</h2>
       {cardDetails.map((card, index)=>{
         return(
 
