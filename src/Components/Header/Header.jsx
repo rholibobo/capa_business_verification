@@ -13,7 +13,7 @@ const Header = () => {
         return null;
     }
   return (
-    <header style={{position: "sticky"}}>
+    <header style={{position: "fixed", top: 0, right: 0, left: 0}}>
         <Navbar />
     </header>
   )
