@@ -24,13 +24,13 @@ const Home = () => {
     <section className='flex flex-col md:flex-row justify-between items-center  text-center px-10 py-8 mx-auto text-green-900'>
       <div className='md:text-left md:w-1/2'>
       <h1 className='text-4xl font-bold my-6'>Allow us handle your verification for you </h1>
-      <p className='text-'><span className='text-orange-600 font-bold'>Capa Business Verification</span> serves as your comprehensive business verification platform, offering a streamlined experience for discovering and connecting with genuine businesses and their owners. Our platform is designed to provide you with all the tools you need for reliable and authentic business verification, ensuring a secure and trustworthy environment for your business interactions</p>
+      <p className=' text-left'><span className='text-orange-600 font-bold'>Capa Business Verification</span> serves as your comprehensive business verification platform, offering a streamlined experience for discovering and connecting with genuine businesses and their owners. Our platform is designed to provide you with all the tools you need for reliable and authentic business verification, ensuring a secure and trustworthy environment for your business interactions</p>
       </div>
-      <img src={heroImage} className='md:w-2/5' alt="Hero" />
+      <img src={heroImage} className='md:w-2/5 mt-8 md:mt-0' alt="Hero" />
     </section>
     <>
     <hr />
-      <h2 className='text-center text-2xl leading-[5]'>Reliable end-to-end verification services</h2>
+      <h2 className='text-center text-2xl my-10 font-semibold'>Reliable end-to-end verification services</h2>
     <section className='w-11/12 md:w-10/12 mx-auto p-2 flex flex-col md:flex-row gap-6 items-center justify-between'>
       {cardDetails.map((card, index)=>{
         return(
