@@ -6,6 +6,7 @@ import Home from "./Pages/Home/Home";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Verification from "./Pages/BusinessVerfication/Verification";
+import Footer from "./Components/Footer/Footer";
 
 // import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />}></Route>
         <Route path="/verification" element={<Verification />}></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 }
