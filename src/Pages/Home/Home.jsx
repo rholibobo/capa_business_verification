@@ -29,12 +29,12 @@ const Home = () => {
       <section className="flex flex-col md:flex-row justify-between items-center  text-center p-4 md:px-10 md:py-8 mx-auto text-green-900">
         <div className="text-left md:w-1/2">
           <h1 className="text-4xl font-bold my-6">
-            Allow us handle your verification for you{" "}
+            Allow us handle your verification for you
           </h1>
           <p className="">
             <span className="text-orange-600 font-bold">
               Capa Business Verification
-            </span>{" "}
+            </span>
             serves as your comprehensive business verification platform,
             offering a streamlined experience for discovering and connecting
             with genuine businesses and their owners. Our platform is designed
