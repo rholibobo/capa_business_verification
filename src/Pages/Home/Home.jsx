@@ -72,7 +72,7 @@ const Home = () => {
           })}
         </section>
 
-        <section className="text-center mx-auto p-4 bg-zinc-50 my-10">
+        <section className="text-center mx-auto p-4 bg-zinc-50 mt-10 pb-20">
           <h2 className="text-2xl leading-[4] font-semibold text-green-900">
             Take the next step
           </h2>
