@@ -34,8 +34,7 @@ const Home = () => {
           <p className="">
             <span className="text-orange-600 font-bold">
               Capa Business Verification
-            </span>
-            serves as your comprehensive business verification platform,
+            </span> serves as your comprehensive business verification platform,
             offering a streamlined experience for discovering and connecting
             with genuine businesses and their owners. Our platform is designed
             to provide you with all the tools you need for reliable and
