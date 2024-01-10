@@ -13,7 +13,7 @@ const Footer = () => {
           <h5 className="text-2xl font-semibold tracking-widest mb-3">
             Solutions
           </h5>
-          <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
+          <Stack direction="column" spacing={{xs: 1, sm: 2}}>
             <Link to="/" className="hover:underline">Business Verification</Link>
             <Link to="/" className="hover:underline">Email Verification</Link>
           </Stack>
@@ -22,7 +22,7 @@ const Footer = () => {
           <h5 className="text-2xl font-semibold tracking-widest mb-3">
             Use Cases
           </h5>
-          <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
+          <Stack direction="column" spacing={{xs: 1, sm: 2}}>
             <Link to="/" className="hover:underline">Lorem1</Link>
             <Link to="/" className="hover:underline">Lorem2</Link>
           </Stack>
