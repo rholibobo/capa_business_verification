@@ -44,7 +44,7 @@ const Home = () => {
           <Stack
             direction="row"
             spacing={{ xs: 2, sm: 2, md: 4 }}
-            className="md:w-3/4 lg:w-1/2 mt-4"
+            className="md:w-3/4 lg:w-3/5 mt-4"
           >
            <Link to="/register"> <Button title="Get started" variant="contained" /></Link>
             <Link><Button title="Learn more" variant="outlined" /></Link>
