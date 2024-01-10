@@ -1,5 +1,6 @@
 import { Stack } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,8 +12,8 @@ const Footer = () => {
             Solutions
           </h5>
           <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
-            <li>Business Verification</li>
-            <li>Email Verification</li>
+            <Link to="/">Business Verification</Link>
+            <Link to="/">Email Verification</Link>
           </Stack>
         </div>
         <div>
@@ -20,22 +21,22 @@ const Footer = () => {
             Use Cases
           </h5>
           <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
-            <li>Lorem1</li>
-            <li>Lorem2</li>
+            <Link to="/">Lorem1</Link>
+            <Link to="/">Lorem2</Link>
           </Stack>
         </div>
       </div>
       <div className="mt-8 md:w-11/12 mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-2">
         <span>&copy; {new Date().getFullYear()}. All rights reserved.</span>
         <ul className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <li>Privacy Policy</li>
-          <li>Terms of Use</li>
-          <li>Terms & Conditions</li>
+          <Link to="/">Privacy Policy</Link>
+          <Link to="/">Terms of Use</Link>
+          <Link to="/">Terms & Conditions</Link>
         </ul>
         <ul className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-          <li>Facebook</li>
-          <li>Twitter</li>
-          <li>LinkedIn</li>
+          <Link to="/">Facebook</Link>
+          <Link to="/">Twitter</Link>
+          <Link to="/">LinkedIn</Link>
         </ul>
       </div>
     </footer>
