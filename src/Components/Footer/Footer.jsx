@@ -35,7 +35,7 @@ const Footer = () => {
           <Link to="/" className="hover:underline">Terms of Use</Link>
           <Link to="/" className="hover:underline">Terms & Conditions</Link>
         </ul>
-        <ul className="mt-4 md:mt-0 flex flex-row md:items-center justify-between justify-self-end md:w-1/2">
+        <ul className="mt-4 md:mt-0 flex flex-row md:items-center justify-between md:justify-self-end md:w-1/2">
           <Link to="/"><FacebookOutlinedIcon  /></Link>
           <Link to="/"><Twitter  /></Link>
           <Link to="/"><LinkedIn  /></Link>
