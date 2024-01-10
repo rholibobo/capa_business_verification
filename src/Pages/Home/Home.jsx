@@ -25,7 +25,7 @@ const Home = () => {
     },
   ];
   return (
-    <div className="mt-10">
+    <div className="mt-16 md:mt-10">
       <section className="flex flex-col md:flex-row justify-between items-center  text-center p-4 md:px-10 md:py-8 mx-auto text-green-900">
         <div className="text-left md:w-1/2">
           <h1 className="text-4xl font-bold my-6">
