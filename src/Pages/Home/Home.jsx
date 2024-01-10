@@ -29,13 +29,12 @@ const Home = () => {
       <section className="flex flex-col md:flex-row justify-between items-center  text-center p-4 md:px-10 md:py-8 mx-auto text-green-900">
         <div className="text-left md:w-1/2">
           <h1 className="text-4xl font-bold my-6">
-            Allow us handle your verification for you{" "}
+            Allow us handle your verification for you
           </h1>
           <p className="">
             <span className="text-orange-600 font-bold">
               Capa Business Verification
-            </span>{" "}
-            serves as your comprehensive business verification platform,
+            </span> serves as your comprehensive business verification platform,
             offering a streamlined experience for discovering and connecting
             with genuine businesses and their owners. Our platform is designed
             to provide you with all the tools you need for reliable and
@@ -45,10 +44,10 @@ const Home = () => {
           <Stack
             direction="row"
             spacing={{ xs: 2, sm: 2, md: 4 }}
-            className="md:w-3/4 lg:w-1/2 mt-4"
+            className="md:w-3/4 lg:w-3/5 mt-4"
           >
-            <Button title="Get started" variant="contained" />
-            <Button title="Learn more" variant="outlined" />
+           <Link to="/register"> <Button title="Get started" variant="contained" /></Link>
+            <Link><Button title="Learn more" variant="outlined" /></Link>
           </Stack>
         </div>
         <img src={heroImage} className="md:w-2/5 mt-10 md:mt-0" alt="Hero" />
@@ -58,7 +57,7 @@ const Home = () => {
         <h2 className="text-center text-2xl my-10 font-semibold">
           Reliable end-to-end verification services
         </h2>
-        <section className="w-11/12 md:w-10/12 mx-auto p-2 flex flex-col md:flex-row gap-6 items-center justify-between">
+        <section className="w-11/12 lg:w-10/12 mx-auto p-2 flex flex-grow flex-col md:flex-row gap-6 justify-between">
           {cardDetails.map((card, index) => {
             return (
               <HomeCards
@@ -72,7 +71,7 @@ const Home = () => {
           })}
         </section>
 
-        <section className="text-center mx-auto p-4 bg-zinc-50 my-10">
+        <section className="text-center mx-auto p-4 bg-zinc-50 mt-10 pb-20">
           <h2 className="text-2xl leading-[4] font-semibold text-green-900">
             Take the next step
           </h2>

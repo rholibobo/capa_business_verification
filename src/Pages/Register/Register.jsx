@@ -91,7 +91,7 @@ const Register = () => {
           color="#007FFF"
           gutterBottom
         >
-          Welcome to CapaBusiness Verififcation
+          Welcome to CapaBusiness Verification
         </Typography>
         <Typography variant="body2" sx={{ fontWeight: "bold" }} gutterBottom>
           Register your account
