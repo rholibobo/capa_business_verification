@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import {
-  AppBar,
   Box,
-  Toolbar,
   Typography,
   Container,
   Button,
   useMediaQuery,
-  Menu,
-  MenuItem,
-  Popover,
   Divider,
 } from "@mui/material";
 // import Box from "@mui/material/Box";
@@ -20,7 +15,7 @@ import {
 // import Button from "@mui/material/Button";
 // import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
+import { KeyboardArrowDown } from "@mui/icons-material";
 
 import styled from "@emotion/styled";
 import useAuth from "../../Hooks/useAuth";
@@ -50,7 +45,6 @@ const StyledLogoutButton = styled(Button)({
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const [arrow, setArrow] = useState(true);
 
   const { authUser, userSignOut } = useAuth();
   const location = useLocation();
@@ -60,11 +54,10 @@ const Navbar = () => {
     setAnchorElNav(null);
   };
 
-  
-
   const signOut = () => {
     userSignOut();
   };
+
   return (
     <Box
       position="static"
@@ -113,21 +106,17 @@ const Navbar = () => {
               // backgroundColor: "red",
               position: "relative",
             }}
-            
           >
-            
-
             <Link to="/about-us">
               <Button
                 sx={{
                   textTransform: "capitalize",
                   color: "black",
                   fontWeight: "bold",
-                  
                 }}
                 className={location.pathname === "/about-us" && Styles.active}
                 // className={}
-                
+
                 onClick={handleCloseNavMenu}
               >
                 About Us
@@ -136,7 +125,6 @@ const Navbar = () => {
 
             {/* dropdwon */}
             <Box className={Styles.verifyCont}>
-              
               <Button
                 sx={{
                   textTransform: "capitalize",
@@ -151,7 +139,7 @@ const Navbar = () => {
                 <Typography
                   gutterBottom
                   variant="body2"
-                  sx={{ margin: "10px", cursor: "pointer", }}
+                  sx={{ margin: "10px", cursor: "pointer" }}
                 >
                   Company Search
                 </Typography>
@@ -159,7 +147,7 @@ const Navbar = () => {
                 <Typography
                   gutterBottom
                   variant="body2"
-                  sx={{ margin: "10px", cursor: "pointer", }}
+                  sx={{ margin: "10px", cursor: "pointer" }}
                 >
                   Personnel Search
                 </Typography>

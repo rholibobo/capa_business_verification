@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 
 
@@ -12,6 +12,7 @@ const Header = () => {
     if(isLoginRoute || isRegisterRoute || isResetPasswordRoute) {
         return null;
     }
+    
   return (
     <header style={{position: "fixed", top: 0, right: 0, left: 0}}>
         <Navbar />
