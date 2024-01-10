@@ -14,8 +14,8 @@ const Footer = () => {
             Solutions
           </h5>
           <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
-            <Link to="/">Business Verification</Link>
-            <Link to="/">Email Verification</Link>
+            <Link to="/" className="hover:underline">Business Verification</Link>
+            <Link to="/" className="hover:underline">Email Verification</Link>
           </Stack>
         </div>
         <div className="hover:bg-[rgba(0,0,0,0.4)] rounded-md p-1 md:w-2/3">
@@ -23,8 +23,8 @@ const Footer = () => {
             Use Cases
           </h5>
           <Stack direction="column" spacing={{xs: 1, sm: 2,}}>
-            <Link to="/">Lorem1</Link>
-            <Link to="/">Lorem2</Link>
+            <Link to="/" className="hover:underline">Lorem1</Link>
+            <Link to="/" className="hover:underline">Lorem2</Link>
           </Stack>
         </div>
       </div>
