@@ -13,7 +13,7 @@ export const HomeCards = ({ title, description, linkDestination, avatar }) => {
         </h2>
         <p className="mb-10 text-opacity-60">{description}</p>
         <Link to={linkDestination}>
-          <Button title="Learn More" variant="contained" />
+          <Button padding="p-2" title="Learn More" variant="contained" />
         </Link>
       </div>
     </div>
