@@ -46,8 +46,8 @@ const Home = () => {
             spacing={{ xs: 2, sm: 2, md: 4 }}
             className="md:w-3/4 lg:w-1/2 mt-4"
           >
-            <Button title="Get started" variant="contained" />
-            <Button title="Learn more" variant="outlined" />
+           <Link to="/register"> <Button title="Get started" variant="contained" /></Link>
+            <Link><Button title="Learn more" variant="outlined" /></Link>
           </Stack>
         </div>
         <img src={heroImage} className="md:w-2/5 mt-10 md:mt-0" alt="Hero" />
