@@ -40,7 +40,7 @@ const Home = () => {
             authentic business verification, ensuring a secure and trustworthy
             environment for your business interactions
           </p>
-          <div className="flex mt-4 max-w-xs md:w-[72%] lg:w-3/5 items-center justify-between">
+          <div className="flex mt-4 max-w-[25rem] md:w-[72%] lg:w-3/5 items-center justify-between">
             <Link className="grid place-items-center" to="/register">
               
               <Button padding="px-6 py-3 md:px-4 lg-px-6" title="Get started" variant="contained" />
