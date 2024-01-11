@@ -71,12 +71,13 @@ const Login = () => {
     }
 
   return (
-    <Box sx={{ width: "40%", margin: "2rem auto 0 auto" }}>
-      <Box sx={{ marginBottom: "1rem" }}>
-      <Typography variant="h5" sx={{fontWeight: "bold"}} color="#007FFF" gutterBottom>
-          Welcome to CapaBusiness Verification
+    <Box className="w-full h-screen flex justify-center items-center">
+      <div className="w-[95%] md:w-[40%] my-0 mx-auto border border-blue-300 border-solid py-8 px-4 rounded-md">
+        <Box sx={{ marginBottom: "1rem" }}>
+      <Typography variant="h5" align="center" sx={{fontWeight: "bold"}} color="#007FFF" gutterBottom>
+          CapaBusiness Verification
         </Typography>
-        <Typography variant="body2" sx={{fontWeight: "bold"}} gutterBottom>
+        <Typography variant="body2" align="center" sx={{fontWeight: "bold"}} gutterBottom>
           Log into your account
         </Typography>
       </Box>
@@ -162,13 +163,15 @@ const Login = () => {
             <StyledSubmitButton type="submit" >Login</StyledSubmitButton>
 
             <Box sx={{marginTop: "10px"}}>
-            <Typography>Don't have an account? <Link to="/register">Signup</Link></Typography>
-            <Typography>Forgot Password? <Link to="/reset-password">Reset Password</Link></Typography>
+            <Typography variant="body2" gutterBottom>Don't have an account? <Link className="text-blue-500" to="/register">Signup</Link></Typography>
+            <Typography variant="body2" gutterBottom>Forgot Password? <Link className="text-blue-500" to="/reset-password">Reset Password</Link></Typography>
             </Box>
             
           </form>
         )}
       </Formik>
+      </div>
+      
     </Box>
   );
 };
