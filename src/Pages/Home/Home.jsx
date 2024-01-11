@@ -40,13 +40,13 @@ const Home = () => {
             authentic business verification, ensuring a secure and trustworthy
             environment for your business interactions
           </p>
-          <div className="flex mt-4 md:w-4/5 lg:w-3/5 items-center justify-between">
-            <Link to="/register">
+          <div className="flex mt-4 max-w-xs md:w-[72%] lg:w-3/5 items-center justify-between">
+            <Link className="grid place-items-center" to="/register">
               
-              <Button padding="px-6 py-3" title="Get started" variant="contained" />
+              <Button padding="px-6 py-3 md:px-4 lg-px-6" title="Get started" variant="contained" />
             </Link>
-            <Link>
-              <Button padding="px-6 py-3" title="Learn more" variant="outlined" />
+            <Link className="grid place-items-center">
+              <Button padding="px-6 py-3 md:px-4 lg-px-6" title="Learn more" variant="outlined" />
             </Link>
           </div>
         </div>
@@ -80,7 +80,7 @@ const Home = () => {
             services
           </p>
           <div className="md:w-1/6 mx-auto">
-            <Link to="/register">
+            <Link className="grid place-items-center" to="/register">
               <Button padding="p-2" variant="outlined" title="Get started" />
             </Link>
           </div>

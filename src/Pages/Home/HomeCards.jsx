@@ -12,7 +12,7 @@ export const HomeCards = ({ title, description, linkDestination, avatar }) => {
           {title}
         </h2>
         <p className="mb-10 text-opacity-60">{description}</p>
-        <Link to={linkDestination}>
+        <Link className="grid place-items-center" to={linkDestination}>
           <Button padding="p-2" title="Learn More" variant="contained" />
         </Link>
       </div>
