@@ -3,7 +3,6 @@ import heroImage from "../../assets/4565.jpg";
 import { HomeCards } from "./HomeCards";
 import businessAvatar from "../../assets/secureVerr.svg";
 import emailAvatar from "../../assets/emailVerr.svg";
-import { Stack } from "@mui/material";
 import Button from "../../Components/Button";
 import { Link } from "react-router-dom";
 
@@ -41,14 +40,15 @@ const Home = () => {
             authentic business verification, ensuring a secure and trustworthy
             environment for your business interactions
           </p>
-          <Stack
-            direction="row"
-            spacing={{ xs: 2, sm: 2, md: 4 }}
-            className="md:w-3/4 lg:w-3/5 mt-4"
-          >
-           <Link to="/register"> <Button title="Get started" variant="contained" /></Link>
-            <Link><Button title="Learn more" variant="outlined" /></Link>
-          </Stack>
+          <div className="flex mt-4 max-w-[25rem] md:w-[72%] lg:w-3/5 items-center justify-between">
+            <Link className="grid place-items-center" to="/register">
+              
+              <Button padding="px-6 py-3 md:px-4 lg-px-6" title="Get started" variant="contained" />
+            </Link>
+            <Link className="grid place-items-center">
+              <Button padding="px-6 py-3 md:px-4 lg-px-6" title="Learn more" variant="outlined" />
+            </Link>
+          </div>
         </div>
         <img src={heroImage} className="md:w-2/5 mt-10 md:mt-0" alt="Hero" />
       </section>
@@ -57,7 +57,7 @@ const Home = () => {
         <h2 className="text-center text-2xl my-10 font-semibold">
           Reliable end-to-end verification services
         </h2>
-        <section className="w-11/12 lg:w-10/12 mx-auto p-2 flex flex-grow flex-col md:flex-row gap-6 justify-between">
+        <section className="w-11/12 lg:w-10/12 mx-auto p-2 flex flex-grow flex-col md:flex-row gap-16 md:gap-10  justify-between">
           {cardDetails.map((card, index) => {
             return (
               <HomeCards
@@ -80,10 +80,9 @@ const Home = () => {
             services
           </p>
           <div className="md:w-1/6 mx-auto">
-
-          <Link to="/register" >
-            <Button variant="outlined" title="Get started" />
-          </Link>
+            <Link className="grid place-items-center" to="/register">
+              <Button padding="p-2" variant="outlined" title="Get started" />
+            </Link>
           </div>
         </section>
       </>
